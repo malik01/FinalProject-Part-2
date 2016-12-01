@@ -1,0 +1,62 @@
+﻿<!--Author : Rutvik Patel, Dhruti Patel
+        Student Number: 300877075, 300857555
+        Date Modified: 24th November 2016
+        Description: Index page of the Maggie Items
+        page name: Index.cshtml
+        -->
+
+@model IEnumerable<Final_Project_Part1.Models.Maggie_Time>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Maggie_Time</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+             |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            
+        </td>
+    </tr>
+}
+
+</table>
+<h4>More delicious than the look.</h4>
+<img src="~/Assets/Images/asian.jpg" width="160" height="120" />
+<img src="~/Assets/Images/image (6).jpeg" width="160" height="120" />
+<img src="~/Assets/Images/Maggi-e1406801032895.jpg" width="160" height="120"/>
+<img src="~/Assets/Images/p.jpg" width="160" height="120"/>
+<img src="~/Assets/Images/Taste-Buds-Kitchen-Long-Life-Noodle-Salad.jpg" width="160" height="120"/>

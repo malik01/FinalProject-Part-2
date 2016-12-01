@@ -1,0 +1,65 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background-size: cover;
+    background-image: url('../Assets/Images/parchment-background-880X480.gif');
+   
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+.jumbotron {
+    background: rgb(200, 54, 54); /* This is for ie8 and below */
+    background: rgba(47, 149, 255, 0.2);
+    text-align: center;
+    background-attachment: fixed;
+    background-image: url('../Assets/Images/main_background2.png');
+ 
+}
+
+.jumbotron h1:hover{
+      -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  color:chartreuse
+}
+.jumbotron h1{
+      -webkit-filter: blur(0px);
+  -moz-filter: blur(0px); 
+  -ms-filter: blur(0px);
+  filter: blur(0px);
+  color:white;
+}
+.jumbotron p{
+    color: gold;
+    -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+}
+.jumbotron p:hover{
+    color: gold;
+    -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
+}
+

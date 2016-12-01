@@ -1,0 +1,64 @@
+﻿<!--Author : Rutvik Patel, Dhruti Patel
+        Student Number: 300877075, 300857555
+        Date Modified: 24th November 2016
+        Description: Index page of the Starters Items
+        page name: Index.cshtml
+        -->
+
+@model IEnumerable<Final_Project_Part1.Models.Starter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Starters</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Image)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+           
+        </td>
+    </tr>
+}
+
+</table>
+<h4>It is more tasty then it looks.</h4>
+
+<img src="~/Assets/Images/s1.jpg" width="160" height="120" />
+<img src="~/Assets/Images/s2.jpg" width="160" height="120"/>
+<img src="~/Assets/Images/s3.jpg" width="160" height="120"/>
+<img src="~/Assets/Images/s4.jpg" width="160" height="120"/>
+<img src="~/Assets/Images/s5.jpg" width="160" height="120"/>

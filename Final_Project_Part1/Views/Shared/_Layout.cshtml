@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--Author : Rutvik Patel, Dhruti Patel
+        Student Number: 300877075, 300857555
+        Date Modified: 24th November 2016
+        Description: Layout page of the restuarant
+        page name: Layout.cshtml
+        -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - MAGGIWALA</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               
+                <img src="~/Assets/Images/mg-logo-be-teksto (1).png" height="30"width="30" style="margin-top:10px"/>
+                @Html.ActionLink("MAGGIEWALA", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                   
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="@Url.Action("Index", "Soups")"<i class="fa fa-glass"></i>Soups</a></li>
+                        <li><a href="@Url.Action("Index", "Starters")"<i class="fa fa-cutlery"></i>Starters</a></li>
+                        <li><a href="@Url.Action("Index", "Maggie_Time")"<i class="fa fa-shopping-basket"></i>Maggie_fun</a></li>
+                        <li><a href="@Url.Action("Index", "Desserts")"<i class="fa fa-lemon-o"></i>Desserts</a></li>
+                        <li><a href="@Url.Action("Index", "Add_Ons")"<i class="fa fa-plus-circle"></i>Add Ons</a></li>
+
+                    </ul>
+                @Html.Partial("_LoginPartial")
+                </div>
+            
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Maggiwala</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
