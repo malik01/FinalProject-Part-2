@@ -1,8 +1,8 @@
 ﻿@model Final_Project_Part1.Models.Soup
 
 @{
-    ViewBag.Title = "Details";
-}
+    ViewBag.Title = "Food - " + Model.Item; 
+    }
 
 <h2>Details</h2>
 
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            <img src="@Html.DisplayNameFor(model => model.Image)"/>
+            <img src="@Url.Content(Model.Image)" alt="Image" class="container img-responsive bigItemImage" />
             
         </dt>
 
@@ -48,4 +48,7 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
+</p>
+<p class="btn">
+    @Html.ActionLink("Add to cart", "AddToCart","ShoppingCart", new { id = Model.Id }, "")
 </p>

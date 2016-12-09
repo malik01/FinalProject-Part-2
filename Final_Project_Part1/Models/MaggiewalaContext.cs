@@ -17,84 +17,10 @@ namespace Final_Project_Part1.Models
         public virtual DbSet<Maggie_Time> Maggie_Time { get; set; }
         public virtual DbSet<Soup> Soups { get; set; }
         public virtual DbSet<Starter> Starters { get; set; }
+        public virtual DbSet<Cart> Carts { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<OrderDetail> OrderDetails { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Add_Ons>()
-                .Property(e => e.Item)
-                .IsUnicode(false);
 
-            modelBuilder.Entity<Add_Ons>()
-                .Property(e => e.Image)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Add_Ons>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Dessert>()
-                .Property(e => e.Item)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Dessert>()
-                .Property(e => e.Description)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Dessert>()
-                .Property(e => e.Image)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Dessert>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Maggie_Time>()
-                .Property(e => e.Item)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Maggie_Time>()
-                .Property(e => e.Description)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Maggie_Time>()
-                .Property(e => e.Image)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Maggie_Time>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Soup>()
-                .Property(e => e.Item)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Soup>()
-                .Property(e => e.Description)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Soup>()
-                .Property(e => e.Image)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Soup>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
-
-            modelBuilder.Entity<Starter>()
-                .Property(e => e.Item)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Starter>()
-                .Property(e => e.Description)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Starter>()
-                .Property(e => e.Image)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<Starter>()
-                .Property(e => e.Price)
-                .HasPrecision(18, 0);
-        }
     }
 }
