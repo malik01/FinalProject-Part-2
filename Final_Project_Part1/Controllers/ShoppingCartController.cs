@@ -31,11 +31,11 @@ namespace Final_Project_Part1.Controllers
         public ActionResult AddToCart(int id)
         {
             // Retrieve the album from the database
-            var addedAlbum = storeDB.Soups
+            var added = storeDB.Soups
             .Single(Soup => Soup.Id == id);
             // Add it to the shopping cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
-            cart.AddToCart(addedAlbum);
+            cart.AddToCart(added);
             // Go back to the main store page for more shopping
             return RedirectToAction("Index");
         }
@@ -47,14 +47,14 @@ namespace Final_Project_Part1.Controllers
             // Remove the item from the cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
             // Get the name of the album to display confirmation
-            string albumName = storeDB.Soups
+            string Name = storeDB.Soups
             .Single(item => item.Id == id).Item;
             // Remove from cart
             int itemCount = cart.RemoveFromCart(id);
             // Display the confirmation message
             var results = new ShoppingCartRemoveViewModel
             {
-                Message = Server.HtmlEncode(albumName) +
+                Message = Server.HtmlEncode(Name) +
             " has been removed from your shopping cart.",
                 CartTotal = cart.GetTotal(),
                 CartCount = cart.GetCount(),

@@ -1,7 +1,7 @@
 ﻿@model Final_Project_Part1.Models.Add_Ons
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Food - " + Model.Item;
 }
 
 <h2>Details</h2>
@@ -39,4 +39,7 @@
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
+</p>
+<p class="btn btn-success">
+    @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.Id }, "")
 </p>
