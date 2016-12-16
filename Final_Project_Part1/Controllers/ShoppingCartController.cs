@@ -30,7 +30,6 @@ namespace Final_Project_Part1.Controllers
         // GET: /Store/AddToCart/5
         public ActionResult AddToCart(int id)
         {
-            // Retrieve the album from the database
             var added = storeDB.Soups
             .Single(Soup => Soup.Id == id);
             // Add it to the shopping cart
@@ -46,7 +45,7 @@ namespace Final_Project_Part1.Controllers
         {
             // Remove the item from the cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
-            // Get the name of the album to display confirmation
+            // Get the name of the soup to display confirmation
             string Name = storeDB.Soups
             .Single(item => item.Id == id).Item;
             // Remove from cart

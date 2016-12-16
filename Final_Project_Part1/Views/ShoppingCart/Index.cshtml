@@ -1,4 +1,5 @@
 ﻿@model Final_Project_Part1.ViewModels.ShoppingCartViewModel
+
 @{
     ViewBag.Title = "Shopping Cart";
 }
@@ -44,10 +45,11 @@ $('#cart-status').text('Cart (' + data.CartCount + ')');
     {
     <tr id="row-@item.RecordId">
         <td>
-            <!--Html.ActionLink(item.ProductId, "Details", "Store", new { id = item.AlbumId }, null)-->
+          NO Name Avaiable
         </td>
         <td>
-           
+            <!-- could not make the price work-->
+           @item.ProductId
         </td>
         <td id="item-count-@item.RecordId">
             @item.Count

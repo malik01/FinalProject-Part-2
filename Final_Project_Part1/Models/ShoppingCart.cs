@@ -28,7 +28,7 @@ namespace Final_Project_Part1.Models
 
         public void AddToCart(Soup soup)
         {
-            // Get the matching cart and album instances
+            // Get the matching cart and soup instances
             var cartItem = storeDB.Carts.SingleOrDefault(
             c => c.CartId == ShoppingCartId
             && c.ProductId == soup.Id);
@@ -103,12 +103,13 @@ namespace Final_Project_Part1.Models
         }
         public decimal GetTotal()
         {
-            // Multiply album price by count of that album to get
-            // the current price for each of those albums in the cart
-            // sum all album price totals to get the cart total
+            Soup soup = new Soup();
+            // Multiply price by count to get
+            // the current price for each in the cart
+            // sum all price totals to get the cart total
             decimal? total = (from cartItems in storeDB.Carts
                               where cartItems.CartId == ShoppingCartId
-                              select (int?)cartItems.Count * cartItems.ProductId).Sum();
+                              select (int?)cartItems.Count * soup.Price).Sum();
             return total ?? decimal.Zero;
         }
         public int CreateOrder(Order order)
